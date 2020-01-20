@@ -21,6 +21,11 @@ public class AddServlet extends HttpServlet {
         RequestDispatcher rd = req.getRequestDispatcher("/sq"); 
         rd.forward(req, res);*/
         
+		
+		/*
+		 * second method :: using send Redirect
+		 */
+		res.sendRedirect("sq?result="+k); //sending data to the other servlet
 		/*		PrintWriter pw = res.getWriter();
 		pw.println("the result is: "+k);
 */	
