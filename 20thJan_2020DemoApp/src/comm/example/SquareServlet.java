@@ -5,28 +5,31 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/sq")
 public class SquareServlet extends HttpServlet {
 
 	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
-		/*int k = (int)(req.getAttribute("result"));
+		
+		PrintWriter pw = res.getWriter();/*int k = (int)(req.getAttribute("result"));
 		int result = k*k;
 		*/
 		//example of Servlet Context
 		ServletContext ctx = getServletContext();
 		String name = ctx.getInitParameter("name");
-		PrintWriter pw = res.getWriter();
+		
 		pw.println("Hi "+name+",<br>");
 		
-		//servlet Config example
+		/*//servlet Config example
 		ServletConfig cf = getServletConfig();
 		String cntry = cf.getInitParameter("Country");
-		pw.println("country: "+cntry+",<br>");
+		pw.println("country: "+cntry+",<br>");*/
 		
 		int k = 0;
 		
