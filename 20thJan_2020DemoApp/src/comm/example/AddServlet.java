@@ -3,6 +3,7 @@ package comm.example;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ public class AddServlet extends HttpServlet {
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int k = i + j;
-		
+				
 		//1. sending data via httpSession 
 		/*HttpSession session = req.getSession();
 		session.setAttribute("result", k);

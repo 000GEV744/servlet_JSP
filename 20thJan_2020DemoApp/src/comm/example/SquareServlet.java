@@ -3,6 +3,7 @@ package comm.example;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,12 @@ public class SquareServlet extends HttpServlet {
 		ServletContext ctx = getServletContext();
 		String name = ctx.getInitParameter("name");
 		PrintWriter pw = res.getWriter();
-		pw.println("Hi "+name+",");
+		pw.println("Hi "+name+",<br>");
+		
+		//servlet Config example
+		ServletConfig cf = getServletConfig();
+		String cntry = cf.getInitParameter("Country");
+		pw.println("country: "+cntry+",<br>");
 		
 		int k = 0;
 		
