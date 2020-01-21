@@ -19,4 +19,19 @@
  <servlet-name>square</servlet-name>
  <url-pattern>/sq</url-pattern>
  </servlet-mapping>
+ 
+ 
+ <servlet>
+  <servlet-name>Demo</servlet-name>
+  <servlet-class>comm.example.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Demo</servlet-name>
+  <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  <param-name>name</param-name>
+  <param-value>Anuj</param-value>
+  </context-param>
 </web-app>

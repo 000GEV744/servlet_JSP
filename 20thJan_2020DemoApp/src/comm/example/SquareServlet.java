@@ -3,6 +3,7 @@ package comm.example;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,12 @@ public class SquareServlet extends HttpServlet {
 		/*int k = (int)(req.getAttribute("result"));
 		int result = k*k;
 		*/
+		//example of Servlet Context
+		ServletContext ctx = getServletContext();
+		String name = ctx.getInitParameter("name");
+		PrintWriter pw = res.getWriter();
+		pw.println("Hi "+name+",");
+		
 		int k = 0;
 		
 		//1. getting data via session
@@ -25,7 +32,6 @@ public class SquareServlet extends HttpServlet {
 		Cookie cookies[] = req.getCookies();
 		for(Cookie c : cookies) {
 			if(c.getName().equals("result")) {
-				PrintWriter pw = res.getWriter();
 				k = Integer.parseInt(c.getValue());
 				k = k*k;
 				
