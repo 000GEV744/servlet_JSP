@@ -12,7 +12,7 @@
 String username = "root";
 String password = "9436030916@anuj";
 String url = "jdbc:mysql://localhost:3306/testimage";
-String sql = "select * from users where id = 2";
+String sql = "select * from users where id = 3";
 Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection(url, username, password);
 Statement st = conn.createStatement();
